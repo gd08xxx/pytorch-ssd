@@ -1,0 +1,11 @@
+red
+yellow
+brown
+green
+blue
+pink
+black
+white
+bag
+zone
+cue
