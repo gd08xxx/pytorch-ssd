@@ -38,7 +38,13 @@ class MultiboxLoss(nn.Module):
             mask = box_utils.hard_negative_mining(loss, labels, self.neg_pos_ratio)
 
         confidence = confidence[mask, :]
-        classification_loss = F.cross_entropy(confidence.reshape(-1, num_classes), labels[mask], size_average=False)
+        classification_loss = F.cross_entropy(
+            confidence.reshape(-1, num_classes), 
+            labels[mask], 
+            # MODIFIED
+            weight=torch.Tensor([1, 1, 6.5, 6.5, 6.5, 6.5, 6.5, 6.5, 6.5, 1, 6.5, 11]),
+            size_average=False
+            )
         pos_mask = labels > 0
         predicted_locations = predicted_locations[pos_mask, :].reshape(-1, 4)
         gt_locations = gt_locations[pos_mask, :].reshape(-1, 4)
