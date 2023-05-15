@@ -46,7 +46,8 @@ parser.add_argument('--balance-data', action='store_true',
 # Params for network
 parser.add_argument('--net', default="mb1-ssd",
                     help="The network architecture, it can be mb1-ssd, mb1-ssd-lite, mb2-ssd-lite or vgg16-ssd.")
-parser.add_argument('--resolution', type=int, default=300,
+# MODIFIED
+parser.add_argument('--resolution', type=int, default=512,
                     help="the NxN pixel resolution of the model (can be changed for mb1-ssd only)")
 parser.add_argument('--freeze-base-net', action='store_true',
                     help="Freeze base net layers.")
