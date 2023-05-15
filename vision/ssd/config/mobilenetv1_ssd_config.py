@@ -2,6 +2,7 @@ import numpy as np
 
 from vision.utils.box_utils import SSDSpec, SSDBoxSizes, generate_ssd_priors
 
+# MODIFIED
 image_size = 512
 image_mean = np.array([127, 127, 127])  # RGB layout
 image_std = 128.0
@@ -9,6 +10,7 @@ iou_threshold = 0.45
 center_variance = 0.1
 size_variance = 0.2
 
+# MODIFIED
 specs = [
     SSDSpec(32, 16, SSDBoxSizes(51.2, 102.4), [2, 3]),
     SSDSpec(16, 32, SSDBoxSizes(102.4, 189.44), [2, 3]),
@@ -20,7 +22,7 @@ specs = [
 
 priors = generate_ssd_priors(specs, image_size)
 
-
+# MODIFIED
 def set_image_size(size=512, min_ratio=20, max_ratio=90):
     global image_size
     global specs
@@ -52,6 +54,7 @@ def set_image_size(size=512, min_ratio=20, max_ratio=90):
     
     # this update logic makes different boxes than the original for 300x300 (but better for power-of-two)
     # for backwards-compatibility, keep the default 300x300 config if that's what's being called for
+    # MODIFIED
     if image_size != 512:
         specs = []
         
