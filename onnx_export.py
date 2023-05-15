@@ -19,8 +19,8 @@ parser.add_argument('--net', default="ssd-mobilenet", help="The network architec
 parser.add_argument('--input', type=str, default='', help="path to input PyTorch model (.pth checkpoint)")
 parser.add_argument('--output', type=str, default='', help="desired path of converted ONNX model (default: <NET>.onnx)")
 parser.add_argument('--labels', type=str, default='labels.txt', help="name of the class labels file")
-parser.add_argument('--width', type=int, default=300, help="input width of the model to be exported (in pixels)")
-parser.add_argument('--height', type=int, default=300, help="input height of the model to be exported (in pixels)")
+parser.add_argument('--width', type=int, default=512, help="input width of the model to be exported (in pixels)")
+parser.add_argument('--height', type=int, default=512, help="input height of the model to be exported (in pixels)")
 parser.add_argument('--batch-size', type=int, default=1, help="batch size of the model to be exported (default=1)")
 parser.add_argument('--model-dir', type=str, default='', help="directory to look for the input PyTorch model in, and export the converted ONNX model to (if --output doesn't specify a directory)")
 
