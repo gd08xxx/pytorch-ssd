@@ -42,7 +42,7 @@ class MultiboxLoss(nn.Module):
             confidence.reshape(-1, num_classes), 
             labels[mask], 
             # MODIFIED
-            weight=torch.Tensor([1, 1, 6.5, 6.5, 6.5, 6.5, 6.5, 6.5, 6.5, 1, 6.5, 11]).to("cuda:0"),
+            weight=torch.Tensor([1, 1, 5.63, 5.22, 4.95, 4.74, 4.58, 4.47, 4.43, 5.38, 4.37, 0.73, 0.73]).to("cuda:0"),
             size_average=False
             )
         pos_mask = labels > 0
