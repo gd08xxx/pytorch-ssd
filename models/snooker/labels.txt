@@ -1,12 +1,13 @@
 BACKGROUND
 red
 yellow
-brown
 green
+brown
 blue
 pink
 black
 white
-bag
-zone
 cue
+zone
+bag
+cushion
