@@ -41,7 +41,21 @@ class MultiboxLoss(nn.Module):
         classification_loss = F.cross_entropy(
             confidence.reshape(-1, num_classes), 
             labels[mask],
-            weight=torch.Tensor([1, 1, 5.5, 5.5, 5.5, 5.5, 5.5, 5.5, 5.5, 5.5, 5.5, 1, 1]).to("cuda:0"),
+            weight=torch.Tensor([
+                1, #background
+                1, #red
+                6.72, #yellow
+                6.29, #green
+                5.99, #brown
+                5.74, #blue
+                5.82, #pink
+                5.46, #black
+                5.17, #white
+                7.14, #cue
+                5.33, #zone
+                0.89, #bag
+                0.89 #cushion
+            ]).to("cuda:0"),
             size_average=False
             )
         pos_mask = labels > 0
