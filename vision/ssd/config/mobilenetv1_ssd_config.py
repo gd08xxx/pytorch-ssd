@@ -2,7 +2,7 @@ import numpy as np
 
 from vision.utils.box_utils import SSDSpec, SSDBoxSizes, generate_ssd_priors
 
-image_size = 2048
+image_size = 1024
 image_mean = np.array([127, 127, 127])  # RGB layout
 image_std = 128.0
 iou_threshold = 0.45
@@ -10,18 +10,18 @@ center_variance = 0.1
 size_variance = 0.2
 
 specs = [
-    SSDSpec(128, 16, SSDBoxSizes(40, 60), [2, 3]),
-    SSDSpec(64, 32, SSDBoxSizes(80, 140), [2, 3]),
-    SSDSpec(32, 64, SSDBoxSizes(200, 500), [2, 3]),
-    SSDSpec(16, 128, SSDBoxSizes(1105.92, 1454.08), [2, 3]),
-    SSDSpec(8, 256, SSDBoxSizes(1454.08, 1802.24), [2, 3]),
-    SSDSpec(4, 512, SSDBoxSizes(1802.24, 2150.4), [2, 3])
+    SSDSpec(64, 16, SSDBoxSizes(20, 30), [2, 3]),
+    SSDSpec(32, 32, SSDBoxSizes(40, 70), [2, 3]),
+    SSDSpec(16, 64, SSDBoxSizes(100, 250), [2, 3]),
+    SSDSpec(8, 128, SSDBoxSizes(552.96, 727.04), [2, 3]),
+    SSDSpec(4, 256, SSDBoxSizes(727.04, 901.12), [2, 3]),
+    SSDSpec(2, 512, SSDBoxSizes(901.12, 1025.7), [2, 3])
 ]
 
 priors = generate_ssd_priors(specs, image_size)
 
 
-def set_image_size(size=2048, min_ratio=20, max_ratio=90):
+def set_image_size(size=1024, min_ratio=20, max_ratio=90):
     global image_size
     global specs
     global priors
