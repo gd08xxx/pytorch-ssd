@@ -52,7 +52,7 @@ def set_image_size(size=1024, min_ratio=20, max_ratio=90):
     
     # this update logic makes different boxes than the original for 300x300 (but better for power-of-two)
     # for backwards-compatibility, keep the default 300x300 config if that's what's being called for
-    if image_size != 2048:
+    if image_size != 1024:
         specs = []
         
         for i in range(len(feature_maps)):
