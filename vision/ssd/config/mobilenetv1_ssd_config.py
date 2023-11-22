@@ -10,8 +10,8 @@ center_variance = 0.1
 size_variance = 0.2
 
 specs = [
-    SSDSpec(64, 16, SSDBoxSizes(20, 30), [2, 3]),
-    SSDSpec(32, 32, SSDBoxSizes(40, 70), [2, 3]),
+    SSDSpec(64, 16, SSDBoxSizes(15, 25), [2, 3]),
+    SSDSpec(32, 32, SSDBoxSizes(25, 70), [2, 3]),
     SSDSpec(16, 64, SSDBoxSizes(100, 250), [2, 3]),
     SSDSpec(8, 128, SSDBoxSizes(552.96, 727.04), [2, 3]),
     SSDSpec(4, 256, SSDBoxSizes(727.04, 901.12), [2, 3]),
