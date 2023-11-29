@@ -453,8 +453,8 @@ if __name__ == '__main__':
                     torch.save(net.module.state_dict(), model_path)
                 else:
                     net.save(model_path)
-                else:
-                    net.save(model_path)
+            else:
+                net.save(model_path)
             logging.info(f"Saved model {model_path}")
 
     logging.info("Task done, exiting program.")
